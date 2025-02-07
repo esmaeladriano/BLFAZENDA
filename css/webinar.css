@@ -1,7 +1,7 @@
-
+/*  linear-gradient(rgba(31, 45, 61, 0.97), rgba(31, 45, 61, 0.97)) */
 .webinar-anniversary {
-  padding: 5rem 0;
-  background: linear-gradient(rgba(31, 45, 61, 0.97), rgba(31, 45, 61, 0.97)),
+
+  background:
     url('../images/webinar-bg.jpg') center/cover fixed;
   text-align: center;
 }
