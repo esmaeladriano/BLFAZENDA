@@ -1,0 +1,19 @@
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 3.5rem; }
+  .webinar-images { grid-template-columns: repeat(2, 1fr); }
+  .timeline { gap: 1.5rem; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hero h1 { font-size: 2.8rem; }
+  .webinar-images { grid-template-columns: 1fr; }
+  .timeline { grid-template-columns: 1fr; }
+  .section-title { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2.2rem; }
+  .subtitle { font-size: 1.1rem; }
+  .cta-button { padding: 1rem 2rem; }
+}

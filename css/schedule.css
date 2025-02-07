@@ -1,0 +1,52 @@
+
+.schedule {
+  padding: 5rem 0;
+  background: #1f2d3d;
+}
+
+.schedule-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.timeline-item {
+  background: rgba(45, 59, 79, 0.8);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+  border-left: 4px solid var(--azul-destaque);
+}
+
+.timeline-time {
+  color: var(--azul-destaque);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.timeline-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--branco);
+}
+
+.timeline-description {
+  color: rgba(248, 249, 250, 0.8);
+  line-height: 1.6;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 180, 216, 0.2);
+}
