@@ -1,75 +1,96 @@
-
 .navbar {
   position: fixed;
-  top: 0;
   width: 100%;
-  background: rgba(10, 25, 47, 0.98);
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
+  top: 0;
   z-index: 1000;
-  padding: 1.2rem 0;
-  border-bottom: 1px solid rgba(0, 180, 216, 0.15);
-  animation: slideDown 0.8s ease-out;
+  background-color: var(--azul-escuro);
 }
 
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  background: var(--gradiente-azul);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1px;
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.05);
+  color: var(--branco);
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .nav-links {
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 .nav-links a {
   color: var(--branco);
   text-decoration: none;
-  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--azul-destaque);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
   transition: all 0.3s ease;
-  position: relative;
-  padding: 0.5rem 0;
+  background-color: var(--branco);
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0;
-  height: 2px;
-  background: var(--azul-destaque);
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
   }
-  to {
-    transform: translateY(0);
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-links {
+    position: fixed;
+    left: -100%;
+    top: 60px; /* Adjusted to match navbar height */
+    gap: 0;
+    flex-direction: column;
+    background-color: var(--azul-escuro);
+    width: 100%;
+    height: calc(100vh - 60px); /* Full viewport height minus navbar */
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    padding: 2rem 0;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    left: 0;
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    display: block;
+    padding: 1rem;
   }
 }
