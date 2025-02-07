@@ -5,8 +5,8 @@
   align-items: center;
   text-align: center;
   padding-top: 8rem;
-  background: linear-gradient(rgba(10, 25, 47, 0.95), rgba(10, 25, 47, 0.95)),
-    url("https://img.freepik.com/fotos-gratis/ilustracao-3d-de-fundo-azul-e-roxo-futurista-techno-sci-fi-luzes-cool_181624-57587.jpg?t=st=1738926147~exp=1738929747~hmac=38fa87f193f28f81b10bb854e50c48721e6b6c5acbbd9042dc14d6c0061ef731&w=900") center/cover fixed;
+  background: linear-gradient(rgba(10, 25, 47, 0.384), rgba(10, 25, 47, 0.24)),
+    url("../images/hero.png") center/cover fixed;
   position: relative;
   overflow: hidden;
 }

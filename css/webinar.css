@@ -1,9 +1,10 @@
-/*  linear-gradient(rgba(31, 45, 61, 0.97), rgba(31, 45, 61, 0.97)) */
+
 .webinar-anniversary {
 
   background:
     url('../images/webinar-bg.jpg') center/cover fixed;
   text-align: center;
+  background-color: linear-gradient(rgba(31, 45, 61, 0.97), rgba(31, 45, 61, 0.97))
 }
 
 .webinar-content {
