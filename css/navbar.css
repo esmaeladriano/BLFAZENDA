@@ -1,9 +1,10 @@
 .navbar {
-  position: fixed;
+  position:fixed ;
   width: 100%;
   top: 0;
   z-index: 1000;
-  background-color: var(--azul-escuro);
+  background-color: #2D5A27;
+  border-radius: 10px;
 }
 
 .nav-container {
@@ -72,7 +73,7 @@
     top: 60px; /* Adjusted to match navbar height */
     gap: 0;
     flex-direction: column;
-    background-color: var(--azul-escuro);
+    background-color: #2D5A27;;
     width: 100%;
     height: calc(100vh - 60px); /* Full viewport height minus navbar */
     text-align: center;

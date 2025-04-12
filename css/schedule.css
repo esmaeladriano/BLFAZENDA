@@ -1,11 +1,11 @@
 
 .schedule {
-  padding: 5rem 0;
-  /* background: #1f2d3d; */
+  padding: 1rem 0;
+
 }
 
 .schedule-container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -18,8 +18,8 @@
 }
 
 .timeline-item {
-  background: rgba(45, 59, 79, 0.8);
-  padding: 2rem;
+  background-color:#2D5A27 ;
+  padding: 0.5rem;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease;
