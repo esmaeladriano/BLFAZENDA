@@ -1,2 +1,10 @@
-# inefor.io
-É um projecto feito por mim, e várias pessoas.
+#logins do sistemas
+
+
+<!-- Permição admin -->
+login : admin@fazenda.com
+senhas: 1234
+
+<!-- Permição cliente -->
+login : bartolomeusapalo@gmail.com
+senhas: 1234
