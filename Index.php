@@ -82,34 +82,8 @@ $produtos = mysqli_fetch_all($res_produtos, MYSQLI_ASSOC);
 
 
   <!-- Produtos -->
-  <section>
-    <h2 class="section-title animate__animated animate__fadeInUp">🛒 Produtos Recentes</h2>
+  <?php include_once('./produtos.php'); ?>
 
-    <div class="swiper produtos-swiper animate__animated animate__fadeInUp">
-      <div class="swiper-wrapper">
-        <?php foreach ($produtos as $produto): ?>
-          <div class="swiper-slide">
-            <div class="card-produto">
-
-              <img src="<?= 'http://localhost/BLFazenda/painel\admin/' . $produto['img'] ?>" alt="<?= $produto['nome'] ?>" />
-              <div class="card-content">
-                <h3><?= $produto['nome'] ?></h3>
-                <p><?= $produto['descricao'] ?></p>
-                <p><strong>💰 Preço:</strong> <?= number_format($produto['preco'], 2, ',', '.') ?> AKZ</p>
-              </div>
-            </div>
-          </div>
-        <?php endforeach; ?>
-      </div>
-
-      <!-- Setas de navegação -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-
-      <!-- Paginação -->
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
 
 
 
