@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['usuario_id'] = $row['id'];
             $_SESSION['nome'] = $row['nome'];
             $_SESSION['nivel'] = $row['role'];
+            $_SESSION['email'] = $row['email'];
 
             // Redireciona para o painel correto
             if ($row['role'] === 'admin') {
@@ -29,14 +30,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: painel_funcionario.php");
             } else {
 
-                header("Location: painel_usuario.php");
+                header("Location: http://localhost/BLFazenda/");
             }
             exit();
         } else {
-            echo "❌ Senha incorreta.";
+            $_SESSION['login_error'] = "❌ Senha incorreta.";
+            header("Location: index.php");
+            exit();
         }
-    } else {
-        echo "❌ Usuário não encontrado.";
+        } else {
+        $_SESSION['login_error'] = "❌ Usuário não encontrado.";
+        header("Location: index.php");
+        exit();
     }
 }
 ?>

@@ -7,4 +7,4 @@ senhas: 1234
 
 <!-- Permição cliente -->
 login : bartolomeusapalo@gmail.com
-senhas: 1234
+senhas: esma@2024E

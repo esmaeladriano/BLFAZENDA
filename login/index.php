@@ -1,7 +1,13 @@
 <?php
 //die(password_hash("123456", PASSWORD_DEFAULT)) ;
 ?>
-
+<?php
+session_start();
+if (isset($_SESSION['login_error'])) {
+  echo "<script>alert('" . addslashes($_SESSION['login_error']) . "');</script>";
+  unset($_SESSION['login_error']);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

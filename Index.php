@@ -1,4 +1,5 @@
 <?php
+
 include_once('./conf/conexao.php');
 
 $sql_banner = "SELECT * FROM banners ORDER BY id ASC LIMIT 3";
@@ -18,16 +19,20 @@ $produtos = mysqli_fetch_all($res_produtos, MYSQLI_ASSOC);
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gestão de Fazendas</title>
   <link rel="stylesheet" href="./style.css">
-   <!-- Inclui Swiper CSS -->
-      <!-- Inclui Swiper JS -->
+  <!-- Inclui Swiper CSS -->
+  <!-- Inclui Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 </head>
 
 <body>
+  <?php
+  session_start();
+  ?>
+
   <header>
     <h1 class="animate__animated animate__fadeInDown">🌾 Sistema de Gestão de Fazendas</h1>
     <nav class="animate__animated animate__fadeIn">
@@ -35,15 +40,38 @@ $produtos = mysqli_fetch_all($res_produtos, MYSQLI_ASSOC);
       <a href="#">Produtos</a>
       <a href="#">Sobre</a>
       <a href="./login/">Login</a>
+      <a href="./carrinho.php" style="margin-left:20px;">
+        <i class="fas fa-shopping-cart"></i>
+        <?php
+        $qtd_carrinho = 0;
+        if (isset($_SESSION['carrinho']) && is_array($_SESSION['carrinho'])) {
+          foreach ($_SESSION['carrinho'] as $item) {
+            $qtd_carrinho += $item['quantidade'];
+          }
+        }
+        ?>
+        <span style="background:#2e7d32; color:#fff; border-radius:50%; padding:2px 8px; font-size:0.9em;">
+          <?= $qtd_carrinho ?>
+        </span>
+      </a>
+      <?php if (isset($_SESSION['email'])): ?>
+        <span style="margin-left:20px; color:#2e7d32;">
+          <i class="fas fa-user"></i> <?= htmlspecialchars($_SESSION['email']) ?>
+        </span>
+        <a href="./login/exit.php" style="color:#c62828; margin-left:10px;">
+          <i class="fas fa-sign-out-alt" style="color:#c62828;"></i> Sair
+        </a>
+      <?php endif; ?>
+
     </nav>
   </header>
 
   <!-- Carrossel -->
   <div class="carousel">
     <?php foreach ($banners as $index => $banner): ?>
-      <img class="mySlides" 
-      src="<?= 'http://localhost/BLFazenda/painel\admin/'. $banner['imagem'] ?>" 
-      alt="Banner <?= $index + 1 ?>" />
+      <img class="mySlides"
+        src="<?= 'http://localhost/BLFazenda/painel\admin/' . $banner['imagem'] ?>"
+        alt="Banner <?= $index + 1 ?>" />
     <?php endforeach; ?>
     <div class="dot-container">
       <?php for ($i = 0; $i < count($banners); $i++): ?>
@@ -51,7 +79,7 @@ $produtos = mysqli_fetch_all($res_produtos, MYSQLI_ASSOC);
       <?php endfor; ?>
     </div>
   </div>
- 
+
 
   <!-- Produtos -->
   <section>
