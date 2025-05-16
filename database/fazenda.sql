@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Abr-2025 às 22:55
+-- Tempo de geração: 03-Maio-2025 às 10:10
 -- Versão do servidor: 10.4.32-MariaDB
 -- versão do PHP: 8.2.12
 
@@ -36,6 +36,15 @@ CREATE TABLE `banners` (
   `status` enum('ativo','inativo') DEFAULT 'ativo',
   `data_criacao` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `banners`
+--
+
+INSERT INTO `banners` (`id`, `titulo`, `descricao`, `imagem`, `link`, `status`, `data_criacao`) VALUES
+(1, 'Oa\r\n', 'ssss', 'upload/67ffa3ff5060e_baner.jpg', 'upload/67ffa3ff5060e_baner.jpg', 'ativo', '2025-04-16 13:36:38'),
+(2, 'sssssss', 'ssssssss', 'upload/67ffa42a7cec4_baner3.jpg', 'upload/67ffa42a7cec4_baner3.jpg', 'ativo', '2025-04-16 13:37:54'),
+(3, 'ddddddd', 'ddddddddd', 'upload/67ffa41577934_baner2.jpg', 'upload/67ffa41577934_baner2.jpg', 'ativo', '2025-04-16 13:37:54');
 
 -- --------------------------------------------------------
 
@@ -131,7 +140,10 @@ CREATE TABLE `produtos` (
 
 INSERT INTO `produtos` (`id`, `nome`, `img`, `descricao`, `preco`, `quantidade`, `data_criacao`, `id_fornecedor`) VALUES
 (4, 'Esmael Adriano adriano', 'upload/67fac6d142cee_logo BLFAZENDA (1).png', '2', 23.00, 2, '2025-04-16 23:00:00', 2),
-(7, 'youi', 'upload/67facc01851ba_logo aldalara.png', 'wwqwqwq', 2343.00, 2, '2025-04-18 23:00:00', 3);
+(7, 'youi', 'upload/67facc01851ba_logo aldalara.png', 'wwqwqwq', 2343.00, 2, '2025-04-18 23:00:00', 3),
+(8, 'Esma.', 'upload/67ffa3ff5060e_baner.jpg', 'yyyt', 2002.00, 20, '2025-04-11 23:00:00', 2),
+(9, 'aaa', 'upload/67ffa41577934_baner2.jpg', 'yyyt', 202.00, 2, '2025-04-24 23:00:00', 2),
+(10, 'aaa', 'upload/67ffa42a7cec4_baner3.jpg', 'gggggg', 2345.00, 20, '2025-04-05 23:00:00', 2);
 
 -- --------------------------------------------------------
 
@@ -242,7 +254,7 @@ ALTER TABLE `vendas`
 -- AUTO_INCREMENT de tabela `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `clientes`
@@ -266,7 +278,7 @@ ALTER TABLE `parceiros`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`

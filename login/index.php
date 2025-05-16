@@ -29,6 +29,10 @@
 
       <button type="submit" class="login-btn">🚪 Acessar Painel</button>
     </form>
+    <div class="register-link" style="margin-top: 20px; text-align: center;">
+      <span>Não tem login?</span>
+      <a href="../cadastro/" style="color:rgb(255, 255, 255); text-decoration: underline;">Cadastre-se aqui</a>
+    </div>
   </div>
 
 </body>
