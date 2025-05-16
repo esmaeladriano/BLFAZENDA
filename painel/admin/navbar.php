@@ -122,7 +122,7 @@ $nome_usuario = $usuario['nome']; // Pegando o nome do usuário
     <li class="nav-item mb-2"><a class="nav-link text-white" href="./index.php">📊 Dashboard</a></li>
     <li class="nav-item mb-2"><a class="nav-link text-white" href="produtos.php">🌾 Produtos</a></li>
     <li class="nav-item mb-2"><a class="nav-link text-white" href="vendas.php">💰 Vendas</a></li>
-    <li class="nav-item mb-2"><a class="nav-link text-white" href="clientes.php">👥 Clientes</a></li>
+    <li class="nav-item mb-2"><a class="nav-link text-white" href="pedidos_admin.php">📝 Pedidos</a></li>
     <li class="nav-item mb-2"><a class="nav-link text-white" href="fornecedores.php">🚚 Fornecedores</a></li>
     <li class="nav-item mb-2"><a class="nav-link text-white" href="parceiros.php">🤝 Parceiros</a></li>
     
